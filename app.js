@@ -1,6 +1,6 @@
 (function () {
   const SUPABASE_URL = 'https://bygqbaixtcqhplllxyed.supabase.co';
-  const SUPABASE_ANON_KEY = 'sb_publishable_REs6u7WBfKjoJ0l3aFBkmQ_jXx__ZXu';
+  const SUPABASE_ANON_KEY = 'sb_publishable_dit3SO_W0Kt9FX95R-_uoA_reUxBJ69';
   const supabase = window.supabase ? window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY) : null;
 
   const bg = `
