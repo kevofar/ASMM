@@ -1,0 +1,171 @@
+:root{
+  --bg-dark:#191919;
+  --cream-main:#f4efe6;
+  --border-black:#000;
+  --heart-color:#e8306a;
+  --accent-green:#009087;
+  --focus-ring:#fff;
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+
+body{
+  background:var(--bg-dark) url('photo.png') repeat;
+  background-size:800px;
+  font-family:system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
+  color:var(--border-black);
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+}
+
+main{width:100%;display:flex;flex-direction:column;align-items:center}
+
+.cracked-earth{position:fixed;inset:0;background:var(--bg-dark);filter:url(#cracks);z-index:-1;opacity:.85}
+
+a,button,label[for],input[type="checkbox"]{cursor:pointer}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+.skip-link{position:absolute;left:16px;top:-80px;z-index:200;background:var(--cream-main);color:#000;font-weight:900;text-transform:uppercase;padding:12px 18px;border:4px solid #000;box-shadow:5px 5px 0 #000;text-decoration:none}
+.skip-link:focus{top:16px}
+:focus-visible{outline:3px solid var(--focus-ring);outline-offset:3px}
+.card,.hero-title-box,.plans-section,.services-section{--focus-ring:#000}
+
+header{width:100%;max-width:1200px;padding:20px 30px;display:flex;justify-content:space-between;align-items:center;z-index:50;position:relative;gap:12px;flex-wrap:wrap}
+.brand-logo{font-size:28px;font-weight:900;text-transform:uppercase;background:var(--cream-main);color:#000;padding:8px 16px;border:4px solid #000;box-shadow:5px 5px 0 #000;letter-spacing:1px}
+
+.btn-brutal{display:inline-flex;align-items:center;justify-content:center;text-decoration:none;color:#000;min-height:44px;padding:.8em 1.6em;font-size:16px;font-weight:800;text-transform:uppercase;background:var(--cream-main);border:4px solid #000;box-shadow:5px 5px 0 #000;transition:transform .15s ease,box-shadow .15s ease,background .15s ease,color .15s ease;font-family:inherit}
+.btn-brutal:hover{background:var(--accent-green);color:#000;transform:translate(-3px,-3px);box-shadow:8px 8px 0 #000}
+.btn-brutal:active{transform:translate(2px,2px);box-shadow:2px 2px 0 #000}
+.btn-dark{background:#000;color:#fff}
+.btn-dark:hover{background:#fff;color:#000}
+
+.footer-socials-col .social-links a[href*="instagram"]:hover{background:#e1306c;color:#fff}
+.footer-socials-col .social-links a[href*="tiktok"]:hover{background:#00f2fe;color:#000}
+.footer-socials-col .social-links a[href*="t.me"]:hover{background:#24a1ee;color:#fff}
+
+.hero{max-width:1100px;margin:40px 20px 60px;display:flex;flex-direction:column;align-items:center;text-align:center;gap:24px;z-index:1}
+.hero-title-box{background:var(--cream-main);border:6px solid #000;box-shadow:12px 12px 0 #000;padding:30px;max-width:900px}
+.hero-title-box h1{font-size:42px;font-weight:900;line-height:1.05;letter-spacing:-.01em;margin-bottom:15px}
+.hero-title-box p{font-size:18px;font-weight:600;line-height:1.45;max-width:56ch;margin-inline:auto}
+
+.section-title{font-size:32px;font-weight:900;text-transform:uppercase;background:var(--cream-main);padding:10px 24px;border:4px solid #000;box-shadow:6px 6px 0 #000;margin-bottom:40px;display:inline-block}
+.card{background:var(--cream-main);border:5px solid #000;box-shadow:10px 10px 0 #000;padding:24px;transition:transform .2s,box-shadow .2s;z-index:1}
+.card:hover{transform:translate(-4px,-4px);box-shadow:14px 14px 0 #000}
+.card__title{font-size:24px;font-weight:900;margin-bottom:15px;display:block;position:relative;overflow:hidden}
+.card__title::after{content:"";position:absolute;bottom:0;left:0;width:90%;height:3px;background:#000;transform:translateX(-100%);transition:transform .3s}
+.card:hover .card__title::after{transform:translateX(0)}
+.card>p{font-weight:600;line-height:1.5}
+
+.plans-section,.services-section{width:100%;max-width:1100px;margin:40px auto;text-align:center;padding:0 20px}
+.section-intro{font-weight:600;font-size:16px;line-height:1.5;color:var(--cream-main);max-width:60ch;margin:-20px auto 40px}
+.btn--full{width:100%;margin-top:4px}
+.plans-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(300px,100%),1fr));gap:30px;text-align:left}
+.services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(250px,100%),1fr));gap:24px;text-align:left}
+
+.plan-card{display:flex;flex-direction:column;justify-content:space-between}
+.plan-card--pro{background:#fff}
+.plan-tag{font-size:14px;font-weight:900;text-transform:uppercase;background:#000;color:#fff;padding:4px 10px;display:inline-block;margin-bottom:15px;width:fit-content}
+.plan-tag--accent{background:var(--accent-green);color:#000}
+.plan-lead{font-weight:600;font-size:14px;line-height:1.5}
+.plan-features{list-style:none;margin:20px 0;display:flex;flex-direction:column;gap:10px}
+.plan-features li{font-size:15px;font-weight:700;display:flex;align-items:baseline;gap:8px;line-height:1.4}
+.plan-features li::before{content:"\25A0";font-size:11px;flex-shrink:0}
+
+footer.site-footer{
+  width:100%;
+  background:var(--cream-main);
+  border-top:6px solid #000;
+  padding:40px 20px 20px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  z-index:10;
+  margin-top:40px;
+}
+
+.footer-inner{
+  max-width:1100px;
+  width:100%;
+  margin:0 auto;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:30px;
+  padding-bottom:30px;
+  border-bottom:2px solid #000;
+}
+
+.footer-col h4{
+  font-size:14px;
+  text-transform:uppercase;
+  letter-spacing:0.05em;
+  margin-bottom:12px;
+  font-weight:900;
+}
+
+.footer-brand{
+  font-size:20px;
+  font-weight:900;
+  text-transform:uppercase;
+  margin-bottom:8px;
+}
+
+.footer-tagline{
+  font-size:13px;
+  opacity:0.8;
+  font-weight:600;
+}
+
+.footer-contacts span{
+  display:block;
+  font-weight:800;
+  font-size:14px;
+  margin-bottom:6px;
+}
+
+.footer-contacts a{color:inherit;text-decoration:none}
+.footer-contacts a:hover{text-decoration:underline}
+
+.footer-bottom{
+  max-width:1100px;
+  width:100%;
+  margin:20px auto 0;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  font-size:12px;
+  font-weight:700;
+  flex-wrap:wrap;
+  gap:15px;
+}
+
+.social-links{display:flex;gap:12px;flex-wrap:wrap}
+
+.heart-interaction{display:flex;align-items:center;gap:10px;font-weight:800;text-transform:uppercase}
+.heart-container{position:relative;width:44px;height:44px;background:#fff;border:3px solid #000;box-shadow:3px 3px 0 #000;display:flex;align-items:center;justify-content:center}
+.heart-container .checkbox{position:absolute;inset:0;width:100%;height:100%;opacity:0;z-index:20;margin:0}
+.heart-container .checkbox:disabled{cursor:default}
+.heart-container:has(.checkbox:focus-visible){outline:3px solid var(--focus-ring);outline-offset:3px}
+.heart-container .svg-container{width:22px;height:22px;display:flex;justify-content:center;align-items:center}
+.heart-container .svg-outline,.heart-container .svg-filled{position:absolute;width:24px;height:24px}
+.heart-container .svg-outline{fill:none;stroke:var(--heart-color);stroke-width:2;stroke-linejoin:round}
+.heart-container .svg-filled{fill:var(--heart-color);display:none}
+.heart-container .svg-celebrate{position:absolute;width:40px;height:40px;display:none;stroke:var(--heart-color);fill:var(--heart-color);stroke-width:2px}
+.heart-container .checkbox:checked~.svg-container .svg-outline{display:none}
+.heart-container .checkbox:checked~.svg-container .svg-filled{display:block;animation:hf .4s}
+.heart-container .checkbox:checked~.svg-container .svg-celebrate{display:block;animation:hc .5s forwards}
+.like-count{min-width:44px;height:44px;padding:0 12px;display:flex;align-items:center;justify-content:center;background:var(--cream-main);color:#000;border:3px solid #000;box-shadow:3px 3px 0 #000;font-weight:900;font-size:16px;font-variant-numeric:tabular-nums}
+@keyframes hf{0%{transform:scale(.6)}60%{transform:scale(1.15)}100%{transform:scale(1)}}
+@keyframes hc{0%{transform:scale(0)}60%{opacity:1}100%{transform:scale(1.4);opacity:0}}
+
+@media(max-width:600px){
+  .hero-title-box h1{font-size:30px}
+  .brand-logo{font-size:20px}
+  header{padding:16px}
+  .hero{margin:28px 16px 40px}
+}
+
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.001ms !important;animation-iteration-count:1 !important;transition-duration:.001ms !important}
+  .btn-brutal:hover,.card:hover{transform:none}
+}
